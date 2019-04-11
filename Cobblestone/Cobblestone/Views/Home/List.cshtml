@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Cobblestone.Models.Employee>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(x => x.FirstName)
+            </td>
+            <td>
+                @Html.DisplayNameFor(x => x.LastName)
+            </td>
+            <td>
+                @Html.DisplayNameFor(x => x.Birthday)
+            </td>
+            <td>
+                @Html.DisplayNameFor(x => x.Age)
+            </td>
+            <td>
+                @Html.DisplayName("Action")
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => employee.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => employee.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => employee.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => employee.Age)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Home", new { @id = employee.Id }, null)
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
